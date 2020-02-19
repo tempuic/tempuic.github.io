@@ -31,12 +31,12 @@ https://web.whatsapp.com/pp?t=s&u=<input id="number">%40c.us&i=<input id="timest
       var number = document.getElementById("number").value;
       var timestamp = document.getElementById("timestamp").value;
       var url = "https://web.whatsapp.com/pp?t=s&u="+number+"%40c.us&i="+timestamp;
-      if (number=="" || timestamp==""){
+      //if (number=="" || timestamp==""){
         performance.clearResourceTimings()
         send(url).then(result(url));
-      } else {
+      /*} else {
          document.getElementById("result").innerHTML = "You should fill both URL and Timestamp textfields";
-      }
+      }*/
   }
   
   
